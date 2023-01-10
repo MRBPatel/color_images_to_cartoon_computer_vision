@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computer Vision</title>
+</head>
+<body>
+<div>
+
+    <center>    <h1> Welcome to Project Demo </h1></center>
+    <h4 style="text-align:left;" >Milan Buha - 12200060</h4>
+
+</div>
+
+<div align="center">
+    <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+        <button type="submit">Process</button>
+    </form>
+
+</div>
+
+
+
+<div style="display: inline-block;">
+{% if img_obj %}
+  <h3>Successfully Processed</h3>
+  <img src="{{ img_obj }}" alt="connect" style="max-height:300px">
+{% endif %}
+
+{% if cartoon_image %}
+    <img src="{{ cartoon_image }}" alt="Cartoon version of the uploaded image" style="max-height:300px">
+{% endif %}
+</div>
+
+
+
+</body>
+</html>
